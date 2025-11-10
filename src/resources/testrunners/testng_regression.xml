@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="PlaywrightFramework Suite" thread-count="2" parallel="tests" verbose="4">
+    
+    <listeners>
+        <listener class-name="com.qa.opencart.listeners.ExtentReportListener"/>
+    </listeners>
+
+    <test name=" Home Page " >
+        <classes>
+            <class name="com.qa.opencart.tests.HomePageTest"/>
+        </classes>
+    </test>
+
+    <test name=" Login Page " >
+        <classes>
+            <class name="com.qa.opencart.tests.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>
