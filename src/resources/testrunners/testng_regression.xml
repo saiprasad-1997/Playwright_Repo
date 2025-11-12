@@ -8,12 +8,14 @@
     </listeners>
 
     <test name=" Home Page " >
+        <parameter name="browser" value="chromium"/>
         <classes>
             <class name="com.qa.opencart.tests.HomePageTest"/>
         </classes>
     </test>
 
     <test name=" Login Page " >
+        <parameter name="browser" value="chromium"/>
         <classes>
             <class name="com.qa.opencart.tests.LoginPageTest"/>
         </classes>
