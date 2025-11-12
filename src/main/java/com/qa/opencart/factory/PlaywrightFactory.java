@@ -47,7 +47,7 @@ public class PlaywrightFactory {
         switch (browserName.toLowerCase()){
             case "chromium":
 //              browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true)));
                 break;
             case "firefox":
 //              browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
@@ -59,7 +59,7 @@ public class PlaywrightFactory {
                 break;
             case "chrome":
 //              browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
-                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false)));
+                tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(true)));
                 break;
             case "edge":
 //              browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
