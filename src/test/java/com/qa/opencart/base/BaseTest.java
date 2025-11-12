@@ -17,7 +17,7 @@ public class BaseTest {
     protected HomePage homePage;
     protected LoginPage loginPage;
 
-    @Parameters({"browser"})
+    @Parameters("browser")
     @BeforeTest
     public void setUp(String browserName){
         playwrightFactory = new PlaywrightFactory();
