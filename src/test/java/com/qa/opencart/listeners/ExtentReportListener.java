@@ -19,7 +19,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import static com.qa.opencart.factory.PlaywrightFactory.takeScreenshot;
 
 public class ExtentReportListener implements ITestListener {
-    private static final String OUTPUT_FOLDER = System.getProperty("user.dir") + "/build/";
+    private static final String OUTPUT_FOLDER = System.getenv("WORKSPACE") + "/build/";
     private static final String FILE_NAME = "TestExecutionReport.html";
 
     private static ExtentReports extent = init();
@@ -65,6 +65,7 @@ public class ExtentReportListener implements ITestListener {
     public synchronized void onFinish(ITestContext context) {
         System.out.println(("Test Suite is ending!"));
         extent.flush();
+        System.out.println("Extent report generated at: " + OUTPUT_FOLDER + FILE_NAME);
         test.remove();
     }
 
