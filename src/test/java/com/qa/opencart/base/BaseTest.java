@@ -4,9 +4,7 @@ import com.microsoft.playwright.Page;
 import com.qa.opencart.factory.PlaywrightFactory;
 import com.qa.opencart.pages.HomePage;
 import com.qa.opencart.pages.LoginPage;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.Properties;
 
@@ -18,8 +16,8 @@ public class BaseTest {
     protected LoginPage loginPage;
 
     @Parameters("browser")
-    @BeforeTest
-    public void setUp(String browserName){
+    @BeforeClass
+    public void setUp(@Optional("chrome")String browserName){
         playwrightFactory = new PlaywrightFactory();
         prop = playwrightFactory.init_prop();
         if(browserName!=null){
@@ -28,7 +26,7 @@ public class BaseTest {
         page = playwrightFactory.initBrowser(prop);
         homePage = new HomePage(page);
     }
-    @AfterTest
+    @AfterClass
     public  void tearDown(){
         page.context().browser().close();
     }
